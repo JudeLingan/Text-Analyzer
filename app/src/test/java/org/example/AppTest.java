@@ -18,7 +18,7 @@ class AppTest {
 	}
 
 	@Test
-	void analysisTestOven() {
+	void analysisOvenTest() {
 		Analysis analysis;
 		try {
 			String path = getClass().getClassLoader().getResource("oven.txt").getPath();
@@ -29,6 +29,18 @@ class AppTest {
 			assertEquals("of", analysis.topWords[0].word);
 			assertEquals(3, analysis.topWords[0].count);
 			assertTrue(Math.abs(analysis.averageLength - 3.347826087) < 0.000001, "average length is not approximately correct");
+		}
+		catch (FileNotFoundException e) {
+			fail(e.getMessage());
+		}
+	}
+
+	@Test
+	void analysisDoubleInsertionTest() {
+		String path = getClass().getClassLoader().getResource("double-insertion.txt").getPath();
+		try {
+			Analysis analysis = new Analysis(path);
+			assertEquals(2, analysis.topWords.length);
 		}
 		catch (FileNotFoundException e) {
 			fail(e.getMessage());
