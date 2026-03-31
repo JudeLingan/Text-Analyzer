@@ -6,6 +6,11 @@ import org.example.Analysis.Analysis;
 
 public class App {
     public static void main(String[] args) {
+		if (args.length < 1) {
+			System.out.println("Must enter a file to read");
+			System.exit(1);
+		}
+
 		long startTime = System.currentTimeMillis();
 		try {
 			Analysis analysis = new Analysis(args[0]);
@@ -21,7 +26,7 @@ public class App {
 			System.out.println(String.format("Average word length: %.2f\n", analysis.averageLength));
 		}
 		catch (FileNotFoundException e) {
-			System.out.println(e.getMessage());
+			System.out.println("File not found " + e.getMessage());
 		}
 		long endTime = System.currentTimeMillis();
 		double timeSeconds = (double) (endTime - startTime) / 1000;
