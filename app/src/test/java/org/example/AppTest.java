@@ -32,6 +32,7 @@ class AppTest {
 			assertEquals(analysis.topWords.length, 3);
 			assertEquals(analysis.topWords[0].word, "of");
 			assertEquals(analysis.topWords[0].count, 3);
+			assertTrue(Math.abs(analysis.averageLength - 3.347826087) < 0.000001, "average length is not approximately correct");
 		}
 		catch (FileNotFoundException e) {
 			System.out.println(e.getMessage());
