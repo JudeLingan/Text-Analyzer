@@ -34,11 +34,12 @@ public class Analysis {
 			WordData wordData = new WordData(word, data.get(word));
 
 			wordCount += wordData.count;
-			totalLength += word.length();
+			totalLength += word.length()*wordData.count;
 		}
 
 		//write mutable variables to immutable class members
 		this.wordCount = wordCount;
+		System.out.println(totalLength + " " + wordCount);
 		this.averageLength = (float) totalLength/wordCount;
 		this.longest = longest;
 		this.topWords = getTopWords(data);
