@@ -13,8 +13,8 @@ class AppTest {
 	@Test
 	void wordDataTest() {
 		WordData wordData = new WordData("hello", 12);
-		assertEquals(wordData.word, "hello");
-		assertEquals(wordData.count, 12);
+		assertEquals("hello", wordData.word);
+		assertEquals(12, wordData.count);
 	}
 
 	@Test
@@ -25,18 +25,14 @@ class AppTest {
 			analysis = new Analysis(path);
 			assertEquals("Garfield:", analysis.longest);
 			assertEquals(23, analysis.wordCount);
-
-			for (int i = 0; i < analysis.topWords.length; ++ i) {
-				System.out.println(analysis.topWords[i]);
-			}
-			assertEquals(analysis.topWords.length, 3);
-			assertEquals(analysis.topWords[0].word, "of");
-			assertEquals(analysis.topWords[0].count, 3);
+			assertEquals(3, analysis.topWords.length);
+			assertEquals("of", analysis.topWords[0].word);
+			assertEquals(3, analysis.topWords[0].count);
 			assertTrue(Math.abs(analysis.averageLength - 3.347826087) < 0.000001, "average length is not approximately correct");
 		}
 		catch (FileNotFoundException e) {
 			System.out.println(e.getMessage());
-			assertTrue(false, "file oven.txt not found");
+			fail("file oven.txt not found");
 		}
 	}
 }
