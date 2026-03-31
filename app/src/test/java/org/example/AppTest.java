@@ -31,8 +31,7 @@ class AppTest {
 			assertTrue(Math.abs(analysis.averageLength - 3.347826087) < 0.000001, "average length is not approximately correct");
 		}
 		catch (FileNotFoundException e) {
-			System.out.println(e.getMessage());
-			fail("file oven.txt not found");
+			fail(e.getMessage());
 		}
 	}
 }

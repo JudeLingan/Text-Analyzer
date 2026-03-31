@@ -39,7 +39,6 @@ public class Analysis {
 
 		//write mutable variables to immutable class members
 		this.wordCount = wordCount;
-		System.out.println(totalLength + " " + wordCount);
 		this.averageLength = (float) totalLength/wordCount;
 		this.longest = longest;
 		this.topWords = getTopWords(data);
