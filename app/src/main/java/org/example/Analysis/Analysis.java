@@ -71,7 +71,7 @@ public class Analysis {
 			}
 		}
 
-		WordData[] output = new WordData[maxElements];
+		WordData[] output = new WordData[tempList.size()];
 		output = tempList.toArray(output);
 		return output;
 	}
