@@ -10,4 +10,4 @@ build
 # Ignore class files
 app/bin
 
-.settings
+**/.settings
