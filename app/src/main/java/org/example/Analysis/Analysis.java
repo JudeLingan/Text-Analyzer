@@ -44,7 +44,7 @@ public class Analysis {
 		this.topWords = getTopWords(data);
 	}
 
-	WordData[] getTopWords(HashMap<String, Integer> wordMap) {
+	private WordData[] getTopWords(HashMap<String, Integer> wordMap) {
 		var tempList = new ArrayList<WordData>();
 		int maxElements = 3;
 		for (String word : wordMap.keySet()) {
@@ -77,7 +77,7 @@ public class Analysis {
 	}
 
 
-	HashMap<String, Integer> fileToHashMap(File file) throws FileNotFoundException {
+	private HashMap<String, Integer> fileToHashMap(File file) throws FileNotFoundException {
 		//initialize local variables
 		Scanner scnr = new Scanner(file);
 		var wordMap = new HashMap<String, Integer>();
