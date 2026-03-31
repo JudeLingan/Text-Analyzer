@@ -51,10 +51,12 @@ public class Analysis {
 			WordData wordData = new WordData(word, wordMap.get(word));
 
 			int i;
+			boolean inserted = false;
 			for (i = 0; i < tempList.size(); ++i) {
 				if (wordData.count > tempList.get(i).count) {
 					//add element if it has a higher count
 					tempList.add(i, wordData);
+					inserted = true;
 
 					//delete out-of-bounds element
 					if (tempList.size() > maxElements) {
@@ -66,7 +68,7 @@ public class Analysis {
 			}
 
 			//if possible, add to end
-			if (tempList.size() < maxElements) {
+			if (!inserted && tempList.size() < maxElements) {
 				tempList.add(wordData);
 			}
 		}
