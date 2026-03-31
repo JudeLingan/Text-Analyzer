@@ -1,4 +1,4 @@
-#Smart Text Analyzer
+#Text Analyzer
 Takes an input file and outputs:
 * word count
 * top 3 most common words
