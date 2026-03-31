@@ -77,8 +77,7 @@ public class Analysis {
 	}
 
 
-	HashMap<String, Integer> pathToHashMap(File file)
-			throws FileNotFoundException {
+	HashMap<String, Integer> pathToHashMap(File file) throws FileNotFoundException {
 		//initialize local variables
 		Scanner scnr = new Scanner(file);
 		var wordMap = new HashMap<String, Integer>();
