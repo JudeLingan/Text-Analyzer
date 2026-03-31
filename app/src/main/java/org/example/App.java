@@ -22,7 +22,7 @@ public class App {
 			}
 			System.out.println();
 
-			System.out.println(String.format("Lengest word: %s\n", analysis.longest));
+			System.out.println(String.format("Longest word: %s\n", analysis.longest));
 			System.out.println(String.format("Average word length: %.2f\n", analysis.averageLength));
 		}
 		catch (FileNotFoundException e) {
