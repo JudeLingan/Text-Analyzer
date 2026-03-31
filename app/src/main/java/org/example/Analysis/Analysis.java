@@ -17,7 +17,7 @@ public class Analysis {
 	public Analysis(String path) throws FileNotFoundException {
 		//initialize local variables
 		File file = new File(path);
-		var data = pathToHashMap(file);
+		var data = fileToHashMap(file);
 
 		//mutable variables to write to immutable class members at end
 		int wordCount = 0;
@@ -57,7 +57,7 @@ public class Analysis {
 					tempList.add(i, wordData);
 
 					//delete out-of-bounds element
-					while (tempList.size() > maxElements) {
+					if (tempList.size() > maxElements) {
 						tempList.remove(maxElements);
 					}
 
@@ -77,7 +77,7 @@ public class Analysis {
 	}
 
 
-	HashMap<String, Integer> pathToHashMap(File file) throws FileNotFoundException {
+	HashMap<String, Integer> fileToHashMap(File file) throws FileNotFoundException {
 		//initialize local variables
 		Scanner scnr = new Scanner(file);
 		var wordMap = new HashMap<String, Integer>();
